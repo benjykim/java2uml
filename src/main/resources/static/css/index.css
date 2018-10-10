@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#textArea {
+    display: block;
+    width: 100%;
+}
+#inputTextToSave,
+pre {
+    -moz-tab-size : 4;
+    -o-tab-size : 4;
+    tab-size : 4;
+}
