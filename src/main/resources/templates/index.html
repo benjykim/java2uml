@@ -43,18 +43,18 @@
                 </div>
         </ul>
     </div>
-    <div class="col-md-5" id="classDiagram">
+    <div class="col-md-5" id="classDiagram" >
         <h3>Class Diagram</h3>
         <div id="myDiagramDiv" style="border: solid 1px black; width:100%; height:400px"></div>
         <br>
         <tr>
-            <td><button>Convert Source Code to UML</button></td>
+            <td><button>Convert UML to Source Code</button></td>
         </tr>
         <hr>
     </div>
-    <div class="col-md-5" id="sourceCode">
+    <div class="col-md-5" id="sourceCode" >
         <h3>Source Code</h3>
-        <form action="/" accept-charset="utf-8" id="umlToCode "name="umlToCode" method="get">
+        <form action="/"  ondrop="drop(event)" ondragover="allowDrop(event) accept-charset="utf-8" id="umlToCode "name="umlToCode" method="get">
             <tr>
                 <td colspan="3">
                     <textarea id="inputTextToSave" style="border: solid 1px black; width:100%;  height:400px"></textarea>
@@ -62,7 +62,7 @@
             </tr>
             <br>
             <br>
-            <input type="button" id="submit" value="Convert UML to Source Code">
+            <input type="button" id="submit" value="Convert Source Code to UML">
         </form>
         <hr>
         <tr>
@@ -78,10 +78,24 @@
             <td><button onclick="loadFileAsText()" >Load Selected File</button><td>
         </tr>
     </div>
+
 </div>
 <div class="container" id="footer"></div>
 
 <script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
 
 </script>
 <script src="./js/textAreaConf.js"></script>

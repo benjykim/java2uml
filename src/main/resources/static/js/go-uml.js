@@ -1,13 +1,12 @@
 function init(nodedata) {
-
     if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
-    var $ = go.GraphObject.make;
+    var gojs = go.GraphObject.make;
     myDiagram =
-        $(go.Diagram, "myDiagramDiv",
+        gojs(go.Diagram, "myDiagramDiv",
             {
                 initialContentAlignment: go.Spot.Center,
                 "undoManager.isEnabled": true,
-                layout: $(go.TreeLayout,
+                layout: gojs(go.TreeLayout,
                     { // this only lays out in trees nodes connected by "generalization" links
                         angle: 90,
                         path: go.TreeLayout.PathSource,  // links go from child to parent
@@ -29,41 +28,41 @@ function init(nodedata) {
     }
     // the item template for properties
     var propertyTemplate =
-        $(go.Panel, "Horizontal",
+        gojs(go.Panel, "Horizontal",
             // property visibility/access
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: false, width: 12 },
                 new go.Binding("text", "visibility", convertVisibility)),
             // property name, underlined if scope=="class" to indicate static property
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: true },
                 new go.Binding("text", "name").makeTwoWay(),
                 new go.Binding("isUnderline", "scope", function (s) { return s[0] === 'c' })),
             // property type, if known
-            $(go.TextBlock, "",
+            gojs(go.TextBlock, "",
                 new go.Binding("text", "type", function (t) { return (t ? ": " : ""); })),
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: true },
                 new go.Binding("text", "type").makeTwoWay()),
             // property default value, if any
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: false },
                 new go.Binding("text", "default", function (s) { return s ? " = " + s : ""; }))
         );
     // the item template for methods
     var methodTemplate =
-        $(go.Panel, "Horizontal",
+        gojs(go.Panel, "Horizontal",
             // method visibility/access
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: false, width: 12 },
                 new go.Binding("text", "visibility", convertVisibility)),
             // method name, underlined if scope=="class" to indicate static method
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: true },
                 new go.Binding("text", "name").makeTwoWay(),
                 new go.Binding("isUnderline", "scope", function (s) { return s[0] === 'c' })),
             // method parameters
-            $(go.TextBlock, "()",
+            gojs(go.TextBlock, "()",
                 // this does not permit adding/editing/removing of parameters via inplace edits
                 new go.Binding("text", "parameters", function (parr) {
                     var s = "(";
@@ -75,26 +74,26 @@ function init(nodedata) {
                     return s + ")";
                 })),
             // method return type, if any
-            $(go.TextBlock, "",
+            gojs(go.TextBlock, "",
                 new go.Binding("text", "type", function (t) { return (t ? ": " : ""); })),
-            $(go.TextBlock,
+            gojs(go.TextBlock,
                 { isMultiline: false, editable: true },
                 new go.Binding("text", "type").makeTwoWay())
         );
     // this simple template does not have any buttons to permit adding or
     // removing properties or methods, but it could!
     myDiagram.nodeTemplate =
-        $(go.Node, "Auto",
+        gojs(go.Node, "Auto",
             {
                 locationSpot: go.Spot.Center,
                 fromSpot: go.Spot.AllSides,
                 toSpot: go.Spot.AllSides
             },
-            $(go.Shape, { fill: "lightyellow" }),
-            $(go.Panel, "Table",
+            gojs(go.Shape, { fill: "lightyellow" }),
+            gojs(go.Panel, "Table",
                 { defaultRowSeparatorStroke: "black" },
                 // header
-                $(go.TextBlock,
+                gojs(go.TextBlock,
                     {
                         row: 0, columnSpan: 2, margin: 3, alignment: go.Spot.Center,
                         font: "bold 12pt sans-serif",
@@ -102,10 +101,10 @@ function init(nodedata) {
                     },
                     new go.Binding("text", "name").makeTwoWay()),
                 // properties
-                $(go.TextBlock, "Properties",
+                gojs(go.TextBlock, "Properties",
                     { row: 1, font: "italic 10pt sans-serif" },
                     new go.Binding("visible", "visible", function (v) { return !v; }).ofObject("PROPERTIES")),
-                $(go.Panel, "Vertical", { name: "PROPERTIES" },
+                gojs(go.Panel, "Vertical", { name: "PROPERTIES" },
                     new go.Binding("itemArray", "properties"),
                     {
                         row: 1, margin: 3, stretch: go.GraphObject.Fill,
@@ -113,14 +112,14 @@ function init(nodedata) {
                         itemTemplate: propertyTemplate
                     }
                 ),
-                $("PanelExpanderButton", "PROPERTIES",
+                gojs("PanelExpanderButton", "PROPERTIES",
                     { row: 1, column: 1, alignment: go.Spot.TopRight, visible: false },
                     new go.Binding("visible", "properties", function (arr) { return arr.length > 0; })),
                 // methods
-                $(go.TextBlock, "Methods",
+                gojs(go.TextBlock, "Methods",
                     { row: 2, font: "italic 10pt sans-serif" },
                     new go.Binding("visible", "visible", function (v) { return !v; }).ofObject("METHODS")),
-                $(go.Panel, "Vertical", { name: "METHODS" },
+                gojs(go.Panel, "Vertical", { name: "METHODS" },
                     new go.Binding("itemArray", "methods"),
                     {
                         row: 2, margin: 3, stretch: go.GraphObject.Fill,
@@ -128,7 +127,7 @@ function init(nodedata) {
                         itemTemplate: methodTemplate
                     }
                 ),
-                $("PanelExpanderButton", "METHODS",
+                gojs("PanelExpanderButton", "METHODS",
                     { row: 2, column: 1, alignment: go.Spot.TopRight, visible: false },
                     new go.Binding("visible", "methods", function (arr) { return arr.length > 0; }))
             )
@@ -150,13 +149,13 @@ function init(nodedata) {
         }
     }
     myDiagram.linkTemplate =
-        $(go.Link,
+        gojs(go.Link,
             { routing: go.Link.Orthogonal },
             new go.Binding("isLayoutPositioned", "relationship", convertIsTreeLink),
-            $(go.Shape),
-            $(go.Shape, { scale: 1.3, fill: "white" },
+            gojs(go.Shape),
+            gojs(go.Shape, { scale: 1.3, fill: "white" },
                 new go.Binding("fromArrow", "relationship", convertFromArrow)),
-            $(go.Shape, { scale: 1.3, fill: "white" },
+            gojs(go.Shape, { scale: 1.3, fill: "white" },
                 new go.Binding("toArrow", "relationship", convertToArrow))
         );
 
@@ -275,7 +274,7 @@ function init(nodedata) {
         { from: 13, to: 11, relationship: "generalization" },
         { from: 14, to: 13, relationship: "aggregation" }*/
     ];
-    myDiagram.model = $(go.GraphLinksModel,
+    myDiagram.model = gojs(go.GraphLinksModel,
         {
             copiesArrays: true,
             copiesArrayObjects: true,
@@ -283,6 +282,13 @@ function init(nodedata) {
             linkDataArray: linkdata
         });
 
+    myDiagram.addDiagramListener("ObjectSingleClicked",
+        function(e) {
+            var part = e.subject.part;
+            console.log(part.data)
+            $('#inputTextToSave').empty()
+            $('#inputTextToSave').append(JSON.stringify(part.data))
+        });
 }
 
 
