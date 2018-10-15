@@ -21,7 +21,7 @@ public class HomeController {
     public String umlToCode() {
         String json = "";
         try {
-            UmlParser umlParser = new UmlParser("class", "C:\\Users\\Jiyong Kim\\Desktop\\spring-boot-converter\\tests\\test1", "diagram");
+            UmlParser umlParser = new UmlParser("class", "C:\\Users\\Jiyong Kim\\Desktop\\converter\\tests\\test1", "diagram");
             json += umlParser.getJson();
         } catch (Exception e) {
             e.printStackTrace();
