@@ -1,6 +1,6 @@
 #  java2uml 
 
-A Converter which converts Java Source Code to UML Class Diagram and also vice versa.
+A Converter which converts Java Source Code to UML Class Diagram and also vice versa. 
 
  
 ## Table of Contents 
@@ -16,9 +16,9 @@ A Converter which converts Java Source Code to UML Class Diagram and also vice v
 * License
  
 
-## Requirements
+## Requirements 
 
-* Java JDK version 1.8
+* Intellij IDEA 2018.1.3
 * Available only when connected to Internet (because of cdn)
  
  
