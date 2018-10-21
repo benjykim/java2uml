@@ -37,15 +37,16 @@ Products such as Visual Paradigm, StarUml, and Papyrus have been released to imp
 
 You need to modify 2 predefined paths before using java2uml. 
 
-First, in UmlParser.java file, you need to change predefined path. The umlparser parses the Java files in that path, so you need to modify the path. And also path should be the same as the chrome file download path.
+* First, in UmlParser.java file, you need to change predefined path. The umlparser parses the Java files in that path, so you need to modify the path. And also path should be the same as the chrome file download path.
 
-Second, in HomeController.java file, you also have to change 'path' 
+* Second, in HomeController.java file, you also have to change 'path' 
  -  UmlParser umlParser = new UmlParser("class", "*path*", "diagram");
-Read details of UmlParser parameters *[here]*. And also you can see more details at the link below.
+ 
+* Read details of UmlParser parameters *[link][1]*. And also you can see more details at the link below.
 
  ### Link
- [How to use java2uml]
- [How to use java2uml] : https://www.youtube.com/watch?v=XE8KC8to9No
+ [How to use java2uml][2]
+
 
 
 ## Libraries and Open Source used
@@ -56,8 +57,8 @@ java2uml is made up of three major things.
 * Second, [here] for translating analyzed Java files to yuml format.
 * Third, GoJS Library for drawing the UML Class Diagrams. 
 
-[here] : https://github.com/shubhamvadhera/uml-parser
-
+[1] : https://github.com/shubhamvadhera/uml-parser
+[2] : https://www.youtube.com/watch?v=XE8KC8to9No
 
 ## License 
 
