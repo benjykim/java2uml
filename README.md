@@ -53,8 +53,8 @@ You need to modify 2 predefined paths before using java2uml.
 
 java2uml is made up of three major things.
 
-* First, I used JavaParser Open Source for analyzing Java files.
-* Second, [here](https://github.com/shubhamvadhera/uml-parser "here") for translating analyzed Java files to yuml format.
+* First, JavaParser Open Source for analyzing Java files.
+* Second, I used [this](https://github.com/shubhamvadhera/uml-parser "this") for translating analyzed Java files to yuml format.
 * Third, GoJS Library for drawing the UML Class Diagrams. 
 
 
