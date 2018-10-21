@@ -42,10 +42,10 @@ You need to modify 2 predefined paths before using java2uml.
 * Second, in HomeController.java file, you also have to change 'path' 
  -  UmlParser umlParser = new UmlParser("class", "*path*", "diagram");
  
-* Read details of UmlParser parameters *[here][1]*. And also you can see more details at the link below.
+* Read details of UmlParser parameters *[here](https://github.com/shubhamvadhera/uml-parser "here")*. And also you can see more details at the link below.
 
  ### Link
- [How to use java2uml][2]
+ [How to use java2uml](https://www.youtube.com/watch?v=XE8KC8to9No "How to use java2uml")
 
 
 
@@ -54,11 +54,9 @@ You need to modify 2 predefined paths before using java2uml.
 java2uml is made up of three major things.
 
 * First, I used JavaParser Open Source for analyzing Java files.
-* Second, [here] for translating analyzed Java files to yuml format.
+* Second, [here](https://github.com/shubhamvadhera/uml-parser "here" for translating analyzed Java files to yuml format.
 * Third, GoJS Library for drawing the UML Class Diagrams. 
 
-[1] : https://github.com/shubhamvadhera/uml-parser "here"
-[2] : https://www.youtube.com/watch?v=XE8KC8to9No "How to use java2uml"
 
 ## License 
 
