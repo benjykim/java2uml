@@ -173,6 +173,7 @@ window.onload = function init() {
         function(e) {
             let part = e.subject.part
             let newLine = "\n"
+            let tab = "    ";
             let fileText = "";
 
             //JSON obj로 만들기
@@ -185,14 +186,18 @@ window.onload = function init() {
             });
 
             $(jsonObj.methods).each(function (index, method) {
-                fileText += " " + method.visibility + " " + method.name + " ( ";
+                fileText += " " + method.visibility + " " +"void" + " " + method.name + " ( ";
+                // If there are no parameters
+                if (this.parameters.length === 0)
+                    fileText += "(";
 
                 $(this.parameters).each(function (index, parameter) {
                     fileText += parameter.type + " " + parameter.name + ", ";
-
                 });
                 fileText = fileText.substring(0, fileText.length - 2);
-                fileText += " )" + "{"+ "}" + newLine;
+                fileText += " )" + "{" + newLine;
+                fileText += tab + "// TO DO implement here" + newLine;
+                fileText += " " + "}" + newLine;
             });
             fileText += "}";
 

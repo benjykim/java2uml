@@ -1,8 +1,5 @@
-class Printer extends Device {
- private boolean isPrinted;
+public class Printer extends Device {
+ private int printNumber;
  private int deviceNumber;
- 
- public boolean printContent(int deviceNumber) {
-  return isPrinted;
- }
+ public int printContent ( int printNumber){}
 }

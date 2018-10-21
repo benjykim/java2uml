@@ -184,19 +184,30 @@ public class UmlParser {
             int endIndex;
             int paramCount;
             int i;
-
+            boolean isVoid = false;
 
             for (i = 0; i < methodInfoArray.length; i++) {
                 Method method = new Method();
+                String[] formalParamArray = null;
                 startIndex = methodInfoArray[i].indexOf("(");
                 endIndex = methodInfoArray[i].indexOf(")");
-
+                // If there are no parameters
+                if (startIndex == -1) {
+                    isVoid = true;
+                    startIndex = endIndex;
+                }
                 setAccessModifier(method, methodInfoArray, i);
+                // here
+                System.out.println("methodInfoArray[i].substring(1, startIndex):"+methodInfoArray[i].substring(1, startIndex));
                 method.setName(methodInfoArray[i].substring(1, startIndex));
+
+
                 method.setReturnType(methodInfoArray[i].substring(endIndex + 2));
                 paramCount = countParams(methodInfoArray, i, startIndex, endIndex);
                 method.setNumOfParameters(paramCount);
-                String[] formalParamArray = methodInfoArray[i].substring(startIndex + 1, endIndex).split("\\.");
+                if (!isVoid) {
+                    formalParamArray = methodInfoArray[i].substring(startIndex + 1, endIndex).split("\\.");
+                }
                 addFormalParameters(method, formalParamArray, paramCount);
                 clazz.addMethod(method);
             }
