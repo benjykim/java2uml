@@ -49,9 +49,6 @@ You need to modify 2 predefined paths before using java2uml.
  
 * Read details of UmlParser parameters *[here](https://github.com/shubhamvadhera/uml-parser "here")*. And also you can see more details at the link below.
 
- ### Link
- [How to use java2uml](https://www.youtube.com/watch?v=XE8KC8to9No "How to use java2uml")
-
 
 
 ## Libraries and Open Source used
