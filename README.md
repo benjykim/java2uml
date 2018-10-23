@@ -8,11 +8,11 @@ A Converter which converts Java Source Code to UML Class Diagram and also vice v
 
 * Requirements
 * Motivation
- * Why use java2uml?
- * What is the purpose of java2uml?
+  * Why use java2uml?
+  * What is the purpose of java2uml?
 * How to use java2uml
- * Java Source Code to UML Class Diagram
- * UML Class Diagram to Java Source Code
+  * Java Source Code to UML Class Diagram
+  * UML Class Diagram to Java Source Code
 * Libraries and Open Source used
 
 
