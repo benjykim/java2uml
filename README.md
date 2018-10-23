@@ -47,7 +47,7 @@ You need to modify 2 predefined paths before using java2uml.
  ```UmlParser umlParser = new UmlParser("class", "path", "diagram");```  
  The umlparser parses the Java files in that path, so you need to modify the path. And also path should be the same as the chrome file download path.
  
-* Read details of UmlParser parameters *[here](https://github.com/shubhamvadhera/uml-parser "here")*. And also you can see more details at the link below.
+* Read details of UmlParser parameters *[here](https://github.com/shubhamvadhera/uml-parser "here")*. 
 
 
 
