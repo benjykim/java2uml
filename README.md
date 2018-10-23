@@ -20,6 +20,7 @@ A Converter which converts Java Source Code to UML Class Diagram and also vice v
 ## Requirements 
 
 * Intellij IDEA 2018.1.3
+* Spring-Boot on JDK 1.8
 * Available only when connected to Internet (because of cdn)
  
  
