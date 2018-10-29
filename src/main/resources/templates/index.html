@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link type="text/css" rel="stylesheet" href="./css/contextMenu.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
@@ -16,13 +17,13 @@
     <script src="./js/saveFile.js"></script>
 
 </head>
-<body>
+<body >
 <div class="container-fluid" style="margin-top: 1rem;">
     <div class="col-md-2">
         <ul class="nav nav-stacked">
             <li class="dropdown" style="margin-top: 5.5rem">
                 <div class="btn-group-vertical" role="group" aria-label="Vertical button group" style="width:180px">
-                    <button type="button" class="btn btn-default">Rectangle</button>
+                    <button type="button" id="addRectangle" class="btn btn-default">Rectangle</button>
                     <button type="button" class="btn btn-default">Square</button>
                     <button type="button" class="btn btn-default">Circle</button>
                     <button type="button" class="btn btn-default">Diamond</button>
@@ -48,7 +49,7 @@
         <tr>
             <td><button>Convert UML to Source Code</button></td>
         </tr>
-        <hr>
+        </br>
     </div>
     <div class="col-md-5" id="sourceCode" >
         <h3>Source Code</h3>
@@ -76,12 +77,25 @@
             <td><button onclick="loadFileAsText()" >Load Selected File</button><td>
         </tr>
     </div>
+    <div id="contextMenu">
+        <ul>
+            <li id="cut" onclick="cxcommand(event)"><a href="#" target="_self">Cut</a></li>
+            <li id="copy" onclick="cxcommand(event)"><a href="#" target="_self">Copy</a></li>
+            <li id="paste" onclick="cxcommand(event)"><a href="#" target="_self">Paste</a></li>
+            <li id="delete" onclick="cxcommand(event)"><a href="#" target="_self">Delete</a></li>
 
+            <li id="av" onclick="cxcommand(event)"><a href="#" target="_self">Add Variable</a></li>
+            <li id="am" onclick="cxcommand(event)"><a href="#" target="_self">Add Method</a></li>
+        </ul>
+    </div>
 </div>
 <div class="container" id="footer"></div>
+
 
 <script src="./js/getJsonAndDrawUML.js"></script>
 <script src="./js/goUml.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="js/button.js"></script>
+<script src="js/disableRightClickMenu.js"></script>
 </body>
 </html>

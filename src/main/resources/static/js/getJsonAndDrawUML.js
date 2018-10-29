@@ -91,7 +91,4 @@ promise.done(function () {
             item.to = map.get(item.to)
         })
     })
-    $('#submit').click(function () {
-        init()
-    })
 })

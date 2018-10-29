@@ -11,7 +11,7 @@ import com.capstone.converter.umlparser.objects.*;
 import com.capstone.converter.umlparser.utils.*;
 
 public class UmlParser {
-    private static final String path = "C:\\Users\\Jiyong Kim\\Desktop\\converter\\tests\\test1\\input.txt";
+    private static final String path = "C:\\Users\\Jiyong Kim\\Desktop\\java2uml-master_hanjoo\\tests\\test1\\input.txt";
     private String arg0;
     private String arg1;
     private String arg2;
