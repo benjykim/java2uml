@@ -8,11 +8,11 @@ A Converter which converts Java Source Code to UML Class Diagram and also vice v
 
 * Requirements
 * Motivation
-  * Why use java2uml?
-  * What is the purpose of java2uml?
+ * Why use java2uml?
+ * What is the purpose of java2uml?
 * How to use java2uml
-  * Java Source Code to UML Class Diagram
-  * UML Class Diagram to Java Source Code
+ * Java Source Code to UML Class Diagram
+ * UML Class Diagram to Java Source Code
 * Libraries and Open Source used
 
 
@@ -20,7 +20,6 @@ A Converter which converts Java Source Code to UML Class Diagram and also vice v
 ## Requirements 
 
 * Intellij IDEA 2018.1.3
-* Spring-Boot on JDK 1.8
 * Available only when connected to Internet (because of cdn)
  
  
@@ -48,7 +47,10 @@ You need to modify 2 predefined paths before using java2uml.
  ```UmlParser umlParser = new UmlParser("class", "path", "diagram");```  
  The umlparser parses the Java files in that path, so you need to modify the path. And also path should be the same as the chrome file download path.
  
-* Read details of UmlParser parameters *[here](https://github.com/shubhamvadhera/uml-parser "here")*. 
+* Read details of UmlParser parameters *[here](https://github.com/shubhamvadhera/uml-parser "here")*. And also you can see more details at the link below.
+
+ ### Link
+ [How to use java2uml](https://www.youtube.com/watch?v=XE8KC8to9No "How to use java2uml")
 
 
 

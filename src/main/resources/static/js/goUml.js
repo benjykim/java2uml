@@ -486,7 +486,7 @@ function showContextMenu(obj, diagram, tool) {
 }
 
 
-
+var method_flag = true;
 // This is the general menu command handler, parameterized by the name of the command.
 function cxcommand(event, val) {
 
@@ -501,10 +501,43 @@ function cxcommand(event, val) {
         case "delete": diagram.commandHandler.deleteSelection(); break;
 
         case "av": pd = { name: "None", type: "String", visibility: "public" }
-            diagram.model.insertArrayItem(nodeArray.properties, 0, pd); break;
 
-        case "am": pd = { name: "None", parameters: [{ name: "", type: "" }], visibility: "private" }
-            diagram.model.insertArrayItem(nodeArray.methods, 0, pd); break;
+        $("#dialog").dialog("open") //다이얼로그창 오픈
+            function sleep(ms) {
+              return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            async function demo() {
+              console.log('Taking a break...');
+              while(method_flag){
+                                     console.log(method_flag);
+                                      await sleep(2000);
+                                      }
+              diagram.model.insertArrayItem(nodeArray.properties, 0, pd);
+              method_flag = true;
+              console.log('Two seconds later');
+            }
+
+            demo();
+           break;
+
+        case "am": pd = { name: "None", parameters: [], visibility: "private" }
+$("#method_dialog").dialog("open") //다이얼로그창 오픈
+
+                    async function demo2() {
+                      console.log('Taking a break...');
+                      while(method_flag){
+                       console.log(method_flag);
+                        await sleep(2000);
+                        }
+                      diagram.model.insertArrayItem(nodeArray.methods, 0, pd);
+                      method_flag = true;
+                      console.log('Two seconds later');
+                    }
+
+                    demo2();
+                   break;
+
     }
     diagram.currentTool.stopTool();
 }
