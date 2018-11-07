@@ -10,14 +10,45 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link type="text/css" rel="stylesheet" href="./css/contextMenu.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.8.30/go-debug.js"></script>
     <script src="./js/saveFile.js"></script>
 
+
 </head>
 <body >
+<div id="dialog">
+    <br>
+    Modifier :
+    <input type="text" id="modifier" maxlength="20" size="10"/>
+    </br>
+
+    <br>
+    Type :
+    <input type="text" id="type" maxlength="20" size="10"/>
+    </br>
+
+    <br>
+    Name :
+    <input type="text" id="name" maxlength="20" size="10"/>
+    </br>
+
+</div>
+<div id="method_dialog">
+    <br>
+    Modifier :
+    <input type="text" id="method_modifier" maxlength="20" size="10"/>
+    </br>
+
+    <br>
+    Name :
+    <input type="text" id="method_name" maxlength="20" size="10"/>
+    </br>
+
+</div>
 <div class="container-fluid" style="margin-top: 1rem;">
     <div class="col-md-2">
         <ul class="nav nav-stacked">
@@ -97,5 +128,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/button.js"></script>
 <script src="js/disableRightClickMenu.js"></script>
+<script src="./js/dialog.js"></script>
 </body>
 </html>
